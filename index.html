@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Tracker</title>
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📝 My Daily Tracker</h1>
+
+    <form id="appForm">
+      <label for="date">📅 Date</label>
+      <input type="date" id="date" required>
+
+      <label for="event">✍️ What did you do?</label>
+      <input type="text" id="event" placeholder=" " required>
+
+      <label for="notes">💬 More details</label>
+      <textarea id="notes" placeholder=" "></textarea>
+
+      <button type="submit">➕ Add Entry</button>
+    </form>
+
+    <a href="view.html" class="view-link">📄 View All Entries</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

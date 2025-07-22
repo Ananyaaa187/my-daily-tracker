@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Entries - My Daily Tracker</title>
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📄 All Entries</h1>
+
+    <input type="text" id="searchInput" placeholder="🔍 Search events or details...">
+
+    <div style="margin: 1rem 0;">
+      <button onclick="sortEntries()">📆 Sort by Date</button>
+      <button onclick="exportData()">⬇ Export All Data</button>
+    </div>
+
+    <div id="appList"></div>
+    <a href="index.html" class="view-link">➕ Add New Entry</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
